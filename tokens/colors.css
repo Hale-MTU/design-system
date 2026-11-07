@@ -19,7 +19,10 @@
    ========================================================================= */
 
 :root {
-  /* ---- Base brand (Color.kt) ---- */
+  /* ---- Base brand (Color.kt) ----
+     The app's seeds. --ov-brand-blue is the same teal as the OpenVitals disc
+     (--hale-teal, tokens/brand.css); --ov-brand-coral is NOT the logo's coral
+     dot (--hale-coral) but a deeper one that can carry text. */
   --ov-brand-blue:  #006E8F;   /* OpenVitalsBlue  — primary seed */
   --ov-brand-green: #2F6F4F;   /* OpenVitalsGreen — tertiary seed */
   --ov-brand-coral: #9B4438;   /* OpenVitalsCoral — accent */

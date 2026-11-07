@@ -1,0 +1,44 @@
+<!-- @dsCard group="Brand" viewport="700x250" name="Hale palette" subtitle="Four brand colours for the marks, the sites and the store graphics" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--ov-background); font-family: var(--ov-font-sans); }
+  .grid { padding: 24px 24px 8px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { border-radius: var(--ov-radius-md); height: 84px; }
+  .pale { box-shadow: inset 0 0 0 1px var(--ov-outline-variant); }
+  .meta { margin-top: 8px; }
+  .name { font: 500 13px/16px var(--ov-font-sans); color: var(--ov-on-surface); }
+  .hex  { font: 500 12px/16px var(--ov-font-mono); color: var(--ov-on-surface-variant); letter-spacing: 0.02em; }
+  .role { font: 400 12px/16px var(--ov-font-sans); color: var(--ov-on-surface-variant); margin-top: 2px; }
+  .note { padding: 0 24px; font: 400 12px/17px var(--ov-font-sans); color: var(--ov-on-surface-variant); }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div>
+    <div class="sw" style="background:var(--hale-deep)"></div>
+    <div class="meta"><div class="name">Deep teal</div><div class="hex">#1F4E5F</div>
+      <div class="role">The h, the wordmark, bezel, arch</div></div>
+  </div>
+  <div>
+    <div class="sw" style="background:var(--hale-teal)"></div>
+    <div class="meta"><div class="name">Primary teal</div><div class="hex">#006E8F</div>
+      <div class="role">The OpenVitals disc</div></div>
+  </div>
+  <div>
+    <div class="sw pale" style="background:var(--hale-pale)"></div>
+    <div class="meta"><div class="name">Pale</div><div class="hex">#CFE6EC</div>
+      <div class="role">Heartbeat, launcher ground</div></div>
+  </div>
+  <div>
+    <div class="sw" style="background:var(--hale-coral)"></div>
+    <div class="meta"><div class="name">Coral</div><div class="hex">#E0735A</div>
+      <div class="role">The dot, one per mark</div></div>
+  </div>
+</div>
+<p class="note">Brand colours, not UI colours: app screens use their own theme. Coral is never text; the app's coral (#9B4438) is a different, deeper colour.</p>
+</body>
+</html>
