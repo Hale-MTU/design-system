@@ -32,7 +32,7 @@ Everything here is grounded in the OpenVitals source, not guessed.
 is retired.
 
 This system is its own repository. The paths below are relative to the **Android
-app** checkout ([`Hale-MTU/android-app`](https://github.com/Hale-MTU/android-app), a sibling of this one), rooted at
+app** checkout ([`Hale-MTU/OpenVitals`](https://github.com/Hale-MTU/OpenVitals), a sibling of this one), rooted at
 `app/src/main/kotlin/tech/mmarca/openvitals/`.
 
 | What | Where |
@@ -57,7 +57,7 @@ app** checkout ([`Hale-MTU/android-app`](https://github.com/Hale-MTU/android-app
 > **If a value here disagrees with the app's `ui/theme/`, the app is right and
 > this file is stale** — and the disagreement itself is the bug worth chasing.
 
-- **Android app repository:** https://github.com/Hale-MTU/android-app
+- **Android app repository:** https://github.com/Hale-MTU/OpenVitals
 - **Reference screenshots:** `assets/screens/` (dashboard, onboarding, settings,
   daily readiness, body energy, activity detail, activity recording, beverage entry)
 - **App icon:** `assets/openvitals-icon.png`, the 512 px store icon from the app's
