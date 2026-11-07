@@ -1,12 +1,12 @@
 {
-  "name": "@openvitals/design-system",
+  "name": "@hale/design-system",
   "version": "1.0.0",
   "private": true,
   "license": "AGPL-3.0-or-later",
-  "description": "OpenVitals design system: tokens, components and app screens.",
+  "description": "Hale design system: the brand marks of Hale and its three apps, and the OpenVitals app's tokens, components and screens.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OpenVitals-MTU/design-system.git"
+    "url": "https://github.com/Hale-MTU/design-system.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

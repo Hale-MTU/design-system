@@ -1,9 +1,23 @@
-# OpenVitals Design System
+# Hale Design System
 
-A design system for **OpenVitals** — a privacy-first Health Connect dashboard,
-activity tracker, and manual-entry app for Android. This project lets design
-agents build well-branded OpenVitals interfaces and assets — production or
-throwaway mocks — grounded in the app's real Material 3 theme.
+The design system of **[Hale](https://hale.ngo)**, the non-profit association
+that publishes three free, open-source health apps for Android: **OpenVitals**,
+**OpenWatch** and **OpenBridge**. It holds two layers:
+
+- **The brand layer** — the Hale mark and wordmark, the three app marks and the
+  four brand colours they share (`tokens/brand.css`, `assets/brand/`, the
+  *Brand* cards). It applies to all three apps, the sites at hale.ngo, the store
+  graphics and the GitHub organisation. See [The Hale family](#the-hale-family).
+- **The OpenVitals app layer** — everything else: the colour schemes, type,
+  shape, spacing, motion, chart tokens, components and the UI kit of
+  **OpenVitals**, a privacy-first Health Connect dashboard, activity tracker,
+  and manual-entry app. It lets design agents build well-branded OpenVitals
+  interfaces and assets — production or throwaway mocks — grounded in the app's
+  real Material 3 theme.
+
+OpenWatch and OpenBridge have no app layer here yet; until they do, they borrow
+the OpenVitals one, which they already share in spirit (Material 3, no account,
+plain copy).
 
 > **Product in one line:** review Health Connect data, record or import workouts,
 > and add manual entries — no account, no cloud sync, no ads, no analytics.
@@ -18,7 +32,7 @@ Everything here is grounded in the OpenVitals source, not guessed.
 is retired.
 
 This system is its own repository. The paths below are relative to the **Android
-app** checkout ([`OpenVitals-MTU/android-app`](https://github.com/OpenVitals-MTU/android-app), a sibling of this one), rooted at
+app** checkout ([`Hale-MTU/android-app`](https://github.com/Hale-MTU/android-app), a sibling of this one), rooted at
 `app/src/main/kotlin/tech/mmarca/openvitals/`.
 
 | What | Where |
@@ -43,10 +57,11 @@ app** checkout ([`OpenVitals-MTU/android-app`](https://github.com/OpenVitals-MTU
 > **If a value here disagrees with the app's `ui/theme/`, the app is right and
 > this file is stale** — and the disagreement itself is the bug worth chasing.
 
-- **Android app repository:** https://github.com/OpenVitals-MTU/android-app
+- **Android app repository:** https://github.com/Hale-MTU/android-app
 - **Reference screenshots:** `assets/screens/` (dashboard, onboarding, settings,
   daily readiness, body energy, activity detail, activity recording, beverage entry)
-- **App icon:** `assets/openvitals-icon.png` (single copy — the duplicate `uploads/` tree was removed in iteration 1)
+- **App icon:** `assets/openvitals-icon.png`, the 512 px store icon from the app's
+  `fastlane/metadata/android/en-US/images/icon.png` (single copy)
 
 ### Which way authority runs
 
@@ -170,12 +185,55 @@ How OpenVitals writes copy:
   `on-surface` / `on-surface-variant` for neutral chrome (top bar, chevrons, list
   rows). One glyph per metric — consistent across dashboard, detail, and settings.
 - **Emoji / unicode icons:** never used.
-- **Logo:** the OpenVitals app icon (`assets/openvitals-icon.png`) is the only
-  brand mark — a teal disc with a peach seated figure + waveform. It is a real
+- **Logo:** the OpenVitals app icon (`assets/openvitals-icon.png`) is the app's
+  mark — a pale heartbeat and a coral dot on the primary-teal disc (recoloured to
+  the Hale palette in November 2026; the shape is unchanged). It is a real
   supplied asset; do not redraw or reconstruct it. Where a wordmark is needed, set
-  **"OpenVitals" in Roboto Bold** (see the Brand foundation card).
+  **"OpenVitals" in Roboto Bold** (see the Brand cards). The other marks of the
+  family are in [The Hale family](#the-hale-family).
 
 ---
+
+## The Hale family
+
+One shape runs through every mark: the **OpenVitals disc** — the primary-teal
+circle, the pale heartbeat across it and the coral dot above it. Each app adds
+one element around it; the association's own mark stands apart.
+
+| Mark | What it is | Files (`assets/brand/`) |
+|---|---|---|
+| **Hale** | A bare lowercase **h** in deep teal with the coral dot at its heel. The **wordmark** is "hale." in Bricolage Grotesque 700, lowercase, tight tracking, the full stop in coral. The two are used in different places: the mark where a square is needed (avatar, favicon, launcher), the wordmark where the name is read (site headers, footers). They are not combined into a badge. | `hale-mark.svg/.png`, `-pale` (on dark), `-inverted.svg` (deep-teal square), `-launcher` (pale square); `hale-wordmark.png`, `-pale`; `hale-lockup-horizontal*`, `hale-lockup-stacked*` |
+| **OpenVitals** | The disc itself. | `openvitals-logo.svg/.png`; the launcher is `assets/openvitals-icon.png` |
+| **OpenWatch** | The disc as a watch dial, in a deep-teal bezel with strap stubs. | `openwatch-foreground.svg`, `-launcher`, `-inverted`, `-monochrome.svg`, `-mark.png` |
+| **OpenBridge** | The disc under a deep-teal arch. | `openbridge-foreground.svg`, `-launcher`, `-monochrome.svg`, `-mark.png` |
+
+**The palette** (`tokens/brand.css`):
+
+| Token | Value | Paints |
+|---|---|---|
+| `--hale-deep` | `#1F4E5F` | the h, the wordmark, the OpenWatch bezel, the OpenBridge arch |
+| `--hale-teal` | `#006E8F` | the OpenVitals disc in every app mark |
+| `--hale-pale` | `#CFE6EC` | the heartbeat, launcher backgrounds, marks on deep teal |
+| `--hale-coral` | `#E0735A` | the dot — one per mark, never more |
+
+**Rules**
+
+- These are **brand colours, not UI colours.** App screens take their colours
+  from the app's theme. The teal is the one value both share
+  (`--hale-teal` = `--ov-brand-blue` = the app's static primary).
+- **Coral is never text** and never a fill larger than the dot. The app's own
+  `--ov-brand-coral` (`#9B4438`) is a different, deeper colour that can carry
+  text; do not swap one for the other.
+- **The marks are supplied assets.** Every SVG uses the Android adaptive-icon
+  canvas (108 × 108, content inside the 66-unit safe circle), so a vector
+  drawable is a direct transcription of its paths. Do not redraw, re-space or
+  recolour them; a debug build may override the disc colour, as OpenVitals does.
+- **Monochrome layers** (themed icons, notification icons) keep the outline
+  elements and the heartbeat and leave the disc open.
+- **Naming:** the association is **Hale** in running text and **Hale MTÜ** where
+  the legal name is needed; MTÜ is its legal form, a non-profit association. The
+  GitHub organisation is `Hale-MTU`. Apps keep their own names: OpenVitals,
+  OpenWatch, OpenBridge — never "Hale OpenVitals".
 
 ## Index — what's in this project
 
@@ -189,6 +247,7 @@ How OpenVitals writes copy:
 
 **Foundations**
 - `styles.css` — global entry point (import this one file)
+- `tokens/brand.css` — the four Hale brand colours and the wordmark face
 - `tokens/colors.css` — canonical + warm palettes, metric accents
 - `tokens/typography.css` — Material 3 type scale + utility classes
 - `tokens/shape.css` — corner radii + elevation
@@ -197,7 +256,7 @@ How OpenVitals writes copy:
 - `tokens/charts.css` — chart chrome (axis, track, grid/area/baseline alphas) and
   chart layout (per-kind heights, axis gutters, strokes)
 - `tokens/fonts.css` — Roboto, Roboto Mono, Material Symbols Outlined
-- `guidelines/*.card.html` — foundation specimen cards (Colors, Type, Spacing, Brand)
+- `guidelines/*.card.html` — foundation specimen cards (Colors, Type, Spacing, Brand — the Brand group holds the Hale palette, the Hale family and the OpenVitals mark)
 
 **Components** (`components/…`, React primitives — namespace `OpenVitalsDesignSystem_626946`)
 - **buttons/** — `Button` (filled/tonal/outlined/text), `IconButton` (plain/surface)
@@ -227,7 +286,9 @@ the design tool and is not rebuilt by a typecheck.
   daily readiness, settings, beverage entry, activity detail, recording)
 
 **Assets**
-- `assets/openvitals-icon.png` — app icon
+- `assets/openvitals-icon.png` — OpenVitals app icon
+- `assets/brand/` — the Hale mark, wordmark and lockups, and the OpenVitals,
+  OpenWatch and OpenBridge marks (see [The Hale family](#the-hale-family))
 - `assets/screens/` — 8 reference screenshots
 
 **Intentional additions.** The source's icons are Compose `ImageVector`s, not a
@@ -245,4 +306,4 @@ webfont so components and mocks have a consistent glyph API. Everything else map
 
 ## License
 
-The OpenVitals design system is licensed under the [`GNU Affero General Public License v3.0 or later`](LICENSE).
+The Hale design system is licensed under the [`GNU Affero General Public License v3.0 or later`](LICENSE).

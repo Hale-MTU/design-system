@@ -1,0 +1,46 @@
+<!-- @dsCard group="Brand" viewport="700x220" name="Hale and its apps" subtitle="The association's mark and wordmark, and the three app marks" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--ov-background); font-family: var(--ov-font-sans); color: var(--ov-on-surface); }
+  .wrap { padding: 24px; display: flex; gap: 28px; align-items: flex-start; }
+  .hale { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .mark { width: 88px; height: 88px; border-radius: 20px; }
+  .wordmark { height: 40px; }
+  .divider { width: 1px; align-self: stretch; background: var(--ov-outline-variant); }
+  .apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .app img { width: 88px; height: 88px; border-radius: 50%; display: block; }
+  .app .name { font: 500 14px/20px var(--ov-font-sans); margin-top: 10px; }
+  .app .what { font: 400 12px/16px var(--ov-font-sans); color: var(--ov-on-surface-variant); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hale">
+    <img class="mark" src="../assets/brand/hale-mark-launcher.png" alt="Hale mark" />
+    <img class="wordmark" src="../assets/brand/hale-wordmark.png" alt="hale." />
+  </div>
+  <div class="divider"></div>
+  <div class="apps">
+    <div class="app">
+      <img src="../assets/openvitals-icon.png" alt="OpenVitals" />
+      <div class="name">OpenVitals</div>
+      <div class="what">The disc: heartbeat and dot</div>
+    </div>
+    <div class="app">
+      <img src="../assets/brand/openwatch-launcher.png" alt="OpenWatch" />
+      <div class="name">OpenWatch</div>
+      <div class="what">The disc as a watch dial</div>
+    </div>
+    <div class="app">
+      <img src="../assets/brand/openbridge-launcher.png" alt="OpenBridge" />
+      <div class="name">OpenBridge</div>
+      <div class="what">The disc under an arch</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

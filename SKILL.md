@@ -1,6 +1,6 @@
 ---
 name: openvitals-design
-description: Use this skill to generate well-branded interfaces and assets for OpenVitals (a privacy-first Health Connect dashboard, activity tracker, and manual-entry app for Android), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
+description: Use this skill to generate well-branded interfaces and assets for Hale and its apps (OpenVitals, a privacy-first Health Connect dashboard, activity tracker, and manual-entry app for Android; OpenWatch; OpenBridge), either for production or throwaway prototypes/mocks/etc. Contains the Hale brand marks and palette, and the OpenVitals design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
 user-invocable: true
 ---
 
@@ -10,6 +10,11 @@ If creating visual artifacts (slides, mocks, throwaway prototypes, etc), copy as
 
 If the user invokes this skill without any other guidance, ask them what they want to build or design, ask some questions, and act as an expert designer who outputs HTML artifacts _or_ production code, depending on the need.
 
+Key things to know about the Hale brand (read "The Hale family" in the README):
+- Hale is the non-profit association that publishes OpenVitals, OpenWatch and OpenBridge. Its mark is a bare lowercase h with a coral dot; its wordmark is "hale." in Bricolage Grotesque with a coral full stop. The two are used in different places, never as one badge.
+- Every app mark is built on the OpenVitals disc (primary teal, pale heartbeat, coral dot): OpenWatch puts it in a watch bezel, OpenBridge under an arch. The marks are supplied in `assets/brand/`; never redraw or recolour them.
+- Four brand colours in `tokens/brand.css`: deep teal #1F4E5F, primary teal #006E8F, pale #CFE6EC, coral #E0735A. They paint marks, sites and store graphics, not app UI. Coral is one dot per mark and never text.
+
 Key things to know about OpenVitals:
 - Material 3, restrained health-dashboard style: neutral surfaces, one accent per metric, flat cards (depth by surface tone, not shadow), 12px card corners.
 - Roboto type (Material default); Material Symbols Outlined icons; no emoji.
@@ -17,5 +22,5 @@ Key things to know about OpenVitals:
 - Metric accents are contrast-audited (3:1 minimum against both surfaces). Never brighten one to make it "pop" — that is the exact regression this palette was built to fix.
 - Copy is calm and factual, sentence case, addresses "you", numbers-first, honest about data confidence.
 - Link `styles.css` for tokens. Components live under `components/` (namespace `OpenVitalsDesignSystem_626946`); full screens under `ui_kits/openvitals-app/`.
-- **The app is Kotlin/Jetpack Compose**, in the sibling `android-app` repository (https://github.com/OpenVitals-MTU/android-app). When working on production code the real theme is that repo's `app/src/main/kotlin/tech/mmarca/openvitals/ui/theme/` — `Color.kt`, `Type.kt`, `Theme.kt`, `DesignTokens.kt`, `ReducedMotion.kt` — plus `ui/charts/ChartTokens.kt`. Values there win over values here; scales and component contracts here win over bare numbers there.
+- **The app is Kotlin/Jetpack Compose**, in the sibling `android-app` repository (https://github.com/Hale-MTU/android-app). When working on production code the real theme is that repo's `app/src/main/kotlin/tech/mmarca/openvitals/ui/theme/` — `Color.kt`, `Type.kt`, `Theme.kt`, `DesignTokens.kt`, `ReducedMotion.kt` — plus `ui/charts/ChartTokens.kt`. Values there win over values here; scales and component contracts here win over bare numbers there.
   - The app was Flutter/Dart between 2026-07-09 and 2026-08-02; that `mobile-app` checkout is retired and is history, not a reference. Where a rule below still reads as Flutter (`kMinInteractiveDimension`, `MediaQuery.disableAnimations`, `Icons.*_outlined`), the Compose equivalent is named beside it — the DESIGN is unchanged, only the surface it lands on.

@@ -1,0 +1,29 @@
+/* ============================================================================
+   Hale — brand tokens
+   ----------------------------------------------------------------------------
+   Hale MTÜ publishes three apps: OpenVitals, OpenWatch and OpenBridge. These
+   four colours paint the marks of all four (the association and the apps),
+   the sites at hale.ngo and the store graphics. They are BRAND colours, not
+   UI colours: an app's screens take their colours from its own theme
+   (tokens/colors.css for OpenVitals), and the two sets stay apart on purpose.
+
+   The one place they meet is the primary teal, which is both the OpenVitals
+   disc and the app's static primary (--ov-brand-blue, --ov-primary).
+
+   Coral is used once per mark: the dot. It is not a text or UI colour, and it
+   is a different colour from the app's --ov-brand-coral (#9B4438), which is
+   deeper so that it can carry text.
+   ========================================================================= */
+
+:root {
+  --hale-deep:  #1F4E5F;  /* the h, the wordmark, the OpenWatch bezel, the OpenBridge arch */
+  --hale-teal:  #006E8F;  /* the OpenVitals disc, in every app mark */
+  --hale-pale:  #CFE6EC;  /* the heartbeat, the launcher background, marks on deep teal */
+  --hale-coral: #E0735A;  /* the dot, one per mark, never more */
+
+  /* The wordmark is set in Bricolage Grotesque 700, lowercase, tight tracking,
+     with the full stop in coral. Use the supplied image (assets/brand/
+     hale-wordmark.png); this token is for the rare place it has to be live
+     text, and nothing else in the family uses this face. */
+  --hale-font-wordmark: 'Bricolage Grotesque', var(--ov-font-sans, sans-serif);
+}
