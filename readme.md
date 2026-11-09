@@ -231,8 +231,12 @@ one element around it; the association's own mark stands apart.
 - **Monochrome layers** (themed icons, notification icons) keep the outline
   elements and the heartbeat and leave the disc open.
 - **Naming:** the association is **Hale** in running text and **Hale MTÜ** where
-  the legal name is needed; MTÜ is its legal form, a non-profit association. The
-  GitHub organisation is `Hale-MTU`. Apps keep their own names: OpenVitals,
+  public text names the organisation (site footers, "Published by"); MTÜ is its
+  legal form, a non-profit association. Where the **legal** name is required —
+  privacy policies, store payment profiles, contracts, financial reports — use the
+  registered name, **Mittetulundusühing Hale**, or its registered short form
+  **MTÜ Hale**, with registry code 80677610. The GitHub organisation is
+  `Hale-MTU`. Apps keep their own names: OpenVitals,
   OpenWatch, OpenBridge — never "Hale OpenVitals".
 
 ## Index — what's in this project
